@@ -15,7 +15,7 @@ BuildRequires:  cmake(MauiKit)
 Core libraries to manage the DE to be shared between Maui Settings and Cask
 
 %prep
-%autosetup -p1 -n %{name}-%{version}}
+%autosetup -p1 -n %{name}-%{version}
 %cmake_kde5 -G Ninja
 
 %build
