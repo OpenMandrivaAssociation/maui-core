@@ -10,6 +10,16 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:  cmake(MauiKit)
+BuildRequires:	cmake(Qt5Qml)
+BuildRequires:	cmake(Qt5Sql)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Quick)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Svg)
+BuildRequires:	cmake(Qt5QuickControls2)
+BuildRequires:	cmake(Qt5Network)
+BuildRequires:	cmake(Qt5DBus)
+BuildRequires:	cmake(Qt5Xml)
 
 %description
 Core libraries to manage the DE to be shared between Maui Settings and Cask
