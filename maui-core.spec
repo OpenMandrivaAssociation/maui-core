@@ -35,6 +35,7 @@ BuildRequires:	cmake(KF5PlasmaQuick)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:  pkgconfig(libcanberra)
+BuildRequires:  pkgconfig(libpulse)
 
 %description
 Core libraries to manage the DE to be shared between Maui Settings and Cask
