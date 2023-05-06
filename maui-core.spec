@@ -1,3 +1,8 @@
+%define major 0
+
+%define libname %mklibname MauiCore
+%define devname %mklibname -d MauiCore
+
 Name:		maui-core
 Version:	0.6.0
 Release:	1
@@ -37,9 +42,25 @@ BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:  pkgconfig(libcanberra)
 BuildRequires:  pkgconfig(libpulse)
+BuildRequires:  sound-theme-freedesktop
 
 %description
 Core libraries to manage the DE to be shared between Maui Settings and Cask
+
+%package -n %{libname}
+Summary:	Library files for maui-core
+Group:		System/Libraries
+
+%description -n %{libname}
+Core libraries to manage the DE to be shared between Maui Settings and Cask
+
+%package -n %{devname}
+Summary:	Development files for maui-core
+Group:		Development/KDE and Qt
+Requires:	%{libname} = %{EVRD}
+
+%description -n %{devname}
+Development files for maui-core
 
 %prep
 %autosetup -p1 -n %{name}-%{version}
@@ -51,4 +72,20 @@ Core libraries to manage the DE to be shared between Maui Settings and Cask
 %install
 %ninja_install -C build
 
-%files 
+%files -n %{libname}
+%{_libdir}/libMauiCoreAudio.so.%{major}*
+%{_libdir}/libMauiCoreNotifications.so.%{major}*
+%{_libdir}/libMauiCorePower.so.%{major}*
+%{_libdir}/qt5/qml/org/mauicore/audio/
+%{_libdir}/qt5/qml/org/mauicore/notifications/
+%{_libdir}/qt5/qml/org/mauicore/power/
+
+%files -n %{devname}
+%{_includedir}/Maui/Core/
+%{_libdir}/cmake/MauiCore/
+%{_libdir}/cmake/MauiCoreAudio/
+%{_libdir}/cmake/MauiCoreNotifications/
+%{_libdir}/cmake/MauiCorePower/
+%{_libdir}/libMauiCoreAudio.so
+%{_libdir}/libMauiCoreNotifications.so
+%{_libdir}/libMauiCorePower.so
