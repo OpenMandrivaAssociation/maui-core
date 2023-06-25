@@ -4,7 +4,7 @@
 %define devname %mklibname -d MauiCore
 
 Name:		maui-core
-Version:	0.6.0
+Version:	0.6.6
 Release:	1
 Summary:	Core libraries to manage the DE to be shared between Maui Settings and Cask.
 Url:		http://mauikit.org/
