@@ -63,7 +63,7 @@ Requires:	%{libname} = %{EVRD}
 Development files for maui-core
 
 %prep
-%autosetup -p1 -n %{name}-%{version}
+%autosetup -p1 -n %{name}-main
 %cmake_kde5 -G Ninja
 
 %build
