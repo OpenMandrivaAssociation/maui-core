@@ -10,7 +10,7 @@ Summary:	Core libraries to manage the DE to be shared between Maui Settings and 
 Url:		https://mauikit.org/
 #Source0:	https://github.com/Nitrux/maui-core/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
 # Use git to pull qt6 version
-Sources0:  maui-core-main.tar.gz
+Source0:  maui-core-main.tar.gz
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
 Group:		Applications/Productivity
 BuildRequires:	cmake
