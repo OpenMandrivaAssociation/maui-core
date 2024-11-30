@@ -73,12 +73,12 @@ Development files for maui-core
 %ninja_install -C build
 
 %files -n %{libname}
-%{_libdir}/libMauiCoreAudio.so.%{major}*
-%{_libdir}/libMauiCoreNotifications.so.%{major}*
-%{_libdir}/libMauiCorePower.so.%{major}*
-%{_libdir}/qt5/qml/org/mauicore/audio/
-%{_libdir}/qt5/qml/org/mauicore/notifications/
-%{_libdir}/qt5/qml/org/mauicore/power/
+#{_libdir}/libMauiCoreAudio.so.%{major}*
+#{_libdir}/libMauiCoreNotifications.so.%{major}*
+#{_libdir}/libMauiCorePower.so.%{major}*
+%{_libdir}/qt6/qml/org/mauicore/audio/
+%{_libdir}/qt6/qml/org/mauicore/notifications/
+%{_libdir}/qt6/qml/org/mauicore/power/
 
 %files -n %{devname}
 %{_includedir}/Maui/Core/
