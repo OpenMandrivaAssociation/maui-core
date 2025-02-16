@@ -5,7 +5,7 @@
 
 Name:		maui-core
 Version:	0.6.6
-Release:	3.20240611
+Release:	4.20240611
 Summary:	Core libraries to manage the DE to be shared between Maui Settings and Cask.
 Url:		https://mauikit.org/
 #Source0:	https://github.com/Nitrux/maui-core/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
