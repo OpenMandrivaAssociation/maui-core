@@ -63,7 +63,7 @@ Development files for maui-core
 
 %prep
 %autosetup -p1 -n %{name}-main
-%cmake_kde5 -G Ninja
+%cmake -G Ninja
 
 %build
 %ninja_build -C build
