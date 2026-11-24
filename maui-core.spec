@@ -3,14 +3,17 @@
 %define libname %mklibname MauiCore
 %define devname %mklibname -d MauiCore
 
+%define commit 17e9d52b805b2ad1a495ef169db16edace19923c
+
 Name:		maui-core
 Version:	0.6.6
-Release:	5.20240611
+Release:	6.20261124
 Summary:	Core libraries to manage the DE to be shared between Maui Settings and Cask.
 Url:		https://mauikit.org/
 #Source0:	https://github.com/Nitrux/maui-core/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
-# Use git to pull qt6 version
-Source0:  maui-core-main.tar.gz
+# No release since 0.6.6. Snapshot of Nitrux/maui-core-src.
+Source0:	https://github.com/Nitrux/maui-core-src/archive/%{commit}.tar.gz#/maui-core-src-%{commit}.tar.gz
+Patch0:		maui-core-no-forced-march.patch
 License:	LGPL-2.1-or-later, CC0 1.0, BSD-2-Clause
 Group:		Applications/Productivity
 BuildRequires:	cmake
@@ -36,11 +39,14 @@ BuildRequires:	cmake(KF6Kirigami2)
 BuildRequires:	cmake(KF6ConfigWidgets)
 BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6Declarative)
-BuildRequires:  cmake(KF6IdleTime)
+BuildRequires:	cmake(KF6IdleTime)
+BuildRequires:	cmake(KF6Solid)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(KF6WindowSystem)
-BuildRequires:  pkgconfig(libcanberra)
-BuildRequires:  pkgconfig(libpulse)
+BuildRequires:	pkgconfig(libcanberra)
+BuildRequires:	pkgconfig(libpulse)
+BuildRequires:	pkgconfig(libpulse-mainloop-glib)
+BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:  sound-theme-freedesktop
 
 %description
@@ -62,7 +68,7 @@ Requires:	%{libname} = %{EVRD}
 Development files for maui-core
 
 %prep
-%autosetup -p1 -n %{name}-main
+%autosetup -p1 -n maui-core-src-%{commit}
 %cmake -G Ninja
 
 %build
