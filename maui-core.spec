@@ -80,6 +80,7 @@ Development files for maui-core
 %files -n %{libname}
 %{_libdir}/libMauiCoreAudio.so.0*
 %{_libdir}/libMauiCoreNotifications.so.0*
+%{_libdir}/libMauiCorePower.so.0*
 %{_libdir}/qt6/qml/org/mauicore/audio/
 %{_libdir}/qt6/qml/org/mauicore/notifications/
 %{_libdir}/qt6/qml/org/mauicore/power/
